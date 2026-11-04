@@ -19,4 +19,4 @@ __pycache__/
 # 에디터
 .vscode/
 .idea/
-.DS_Store
+.DS_Storenotebooks/figures/
