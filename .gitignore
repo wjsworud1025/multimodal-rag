@@ -21,3 +21,6 @@ __pycache__/
 .idea/
 .DS_Store
 notebooks/figures/
+
+# 연습 폴더
+PracticeNotebook/
