@@ -51,11 +51,11 @@ flowchart LR
 
    PDF 추출을 위해 Poppler와 Tesseract도 설치해 `PATH`에 추가합니다. `requirements.lock.txt`는 잠금 파일 형식이 아니므로 설치에 사용하지 않습니다.
 
-2. `.env.example`을 `.env`로 복사해 `OPENAI_API_KEY`를 설정하고, 별도로 준비한 PDF를 `data/invest.pdf`에 둡니다. API 호출에는 비용이 발생할 수 있습니다.
+2. `.env.example`을 `.env`로 복사해 `OPENAI_API_KEY`를 설정합니다. 샘플 PDF는 저장소의 [`data/invest.pdf`](data/invest.pdf)에 포함되어 있으며, 다른 자료로 실습하려면 이 파일을 교체합니다. API 호출에는 비용이 발생할 수 있습니다.
 
 3. `jupyter lab`을 실행하고 작업 디렉터리를 `notebooks/`로 맞춘 뒤 `Multi_modal_RAG.ipynb`의 셀을 순서대로 실행합니다. 03번 비교 실습은 `PracticeNotebook/` 아래의 중간 산출물이 필요하므로 준비하거나 경로를 수정해야 합니다.
 
-새 환경에서 전체 실행은 아직 검증되지 않았으며 패키지 버전과 추출 환경에 따라 수정이 필요할 수 있습니다. PDF와 API 키는 저장소에 포함되지 않습니다.
+새 환경에서 전체 실행은 아직 검증되지 않았으며 패키지 버전과 추출 환경에 따라 수정이 필요할 수 있습니다. API 키는 저장소에 포함되지 않습니다.
 
 ## 주요 파일과 한계
 
