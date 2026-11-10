@@ -130,3 +130,70 @@ Mermaid 다이어그램은 교안을 복사하지 않고 현재 코드의 저장
 - [ ] 출력이 남은 제출용 노트북과 보안 상태를 확인하고 기한 전에 공개 저장소 링크를 제출했다.
 
 **다음 행동: 현재 한국은행 PDF가 수업에서 사용한 PDF와 다른 자료인지 확인한다.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Multimodal RAG
+
+PDF의 텍스트와 이미지를 활용하는 멀티모달 RAG 실습 프로젝트입니다.
+
+## 텍스트 전용 RAG와 멀티모달 RAG 비교
+
+같은 질문으로 그래프 범례의 색상을 비교했습니다. 텍스트 전용 RAG는 색상 정보를 찾지 못했고, 멀티모달 RAG는 무역정책 불확실성 지수를 초록색, 지정학적 리스크 지수를 주황색으로 답했습니다.
+
+![텍스트 전용 RAG와 멀티모달 RAG의 그래프 범례 색상 답변 비교](docs/images/rag-before-after.png)
+
+이 결과는 한 질문에 대한 실행 사례입니다. 두 검색기는 색인 대상이 서로 달라 답변 차이를 이미지 사용의 효과만으로 단정할 수 없습니다.
+
+현재는 폴더와 파일 구조만 만든 목업입니다. 실행 기능이나 의존성은 아직 없습니다.
+
+- `data/invest.pdf`: 빈 자리표시자입니다. 실제 PDF로 교체하세요.
+- `data/figures/`: 추출 이미지 저장 위치입니다.
+- `notebooks/Multi_modal_RAG.ipynb`: 실습 노트북입니다.
+- `src/`: PDF 파싱, 요약 체인, 다중 벡터 검색기 구현 위치입니다.
+
+`.venv/`는 빈 폴더입니다. 실제 가상환경이 필요하면 `python -m venv .venv`로 생성하세요.
+`.env`에 실제 키를 보관하며, `.env.example`에는 키 없는 설정 템플릿만 작성하세요.
+`.env`, `.venv/`, `data/figures/`는 Git에서 제외됩니다.
+
+git clone <저장소 주소>
+cd multimodal-rag
+
+# 가상환경 생성 및 활성화
+python -m venv .venv
+source .venv/bin/activate          # 윈도우: .venv\Scripts\activate
+
+# 의존성 설치
+pip install --upgrade pip
+pip install -r requirements.txt     # 또는 requirements.lock.txt
+
+# 커널 등록
+python -m ipykernel install --user --name multimodal-rag
+
+# .env 작성
+cp .env.example .env                # 윈도우: copy .env.example .env
+# .env 파일을 열어 실제 API 키를 입력
